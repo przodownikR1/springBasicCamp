@@ -14,10 +14,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 public class LazyTest {
 
     @Test
     public void testResource() {
+        log.info("+++ test");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
         Service service = context.getBean(Service.class);
