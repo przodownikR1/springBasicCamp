@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:c="http://www.springframework.org/schema/c"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+<bean id="db" class="pl.java.scalatech.domain.collections.Db"/>
+
+<bean id="item" class="pl.java.scalatech.domain.collections.Item">
+  <property name="name" value="FirstItem"/>
+  <property name="shortcuts" ref="list"/>
+  <property name="goods" ref="goods"/>
+  <property name="locations" ref="locations"/>
+  <property name="flag" value="true"/>
+  <property name="props" ref="prop2"/>
+  <property name="quantity" ref="quantity"/>
+
+</bean>
+
+
+
+<bean id="quantity" class="org.springframework.beans.factory.config.PropertyPathFactoryBean">
+ <property name="targetObject"  ref="db"/>
+ <property name="propertyPath" value="quantity"/>
+</bean>
+
+
+<bean id="flag" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+ <property name="staticField" value="java.lang.Boolean.TRUE"/>
+
+</bean>
+<bean id="prop2" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+ <property name="location" value="classpath:car.properties"/>
+</bean>
+
+<bean id="goods" class="org.springframework.beans.factory.config.MapFactoryBean">
+ <property name="sourceMap">
+    <map>
+    <entry key="yamaha" value="r1"/>
+    <entry key="suzuki" value="gixxer"/>
+    <entry key="kawasaki" value="ninja"/>
+    </map>
+ </property>
+</bean>
+
+
+<bean id="locations"  class="org.springframework.beans.factory.config.SetFactoryBean">
+  <property name="sourceSet">
+    <set>
+     <value>Radom</value>
+     <value>Warszawa</value>  
+    </set>
+  </property>
+</bean>
+<bean id="list" class="org.springframework.beans.factory.config.ListFactoryBean">
+  <property name="sourceList">
+    <list>
+         <value>test1</value>
+         <value>test2</value>
+    </list>
+  </property>
+</bean>  
+  
+</beans>
+
