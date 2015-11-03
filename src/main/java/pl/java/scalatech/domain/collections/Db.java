@@ -1,7 +1,9 @@
 package pl.java.scalatech.domain.collections;
 
-public class Db {
+import lombok.Getter;
 
+public class Db {
+    @Getter
     private int quantity =20;
 
 }

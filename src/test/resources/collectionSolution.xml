@@ -17,7 +17,7 @@
   <property name="goods" ref="goods"/>
   <property name="locations" ref="locations"/>
   <property name="flag" value="true"/>
-  <property name="props" ref="props"/>
+  <property name="props" ref="prop2"/>
   <property name="quantity" ref="quantity"/>
 
 </bean>
@@ -42,7 +42,7 @@
   <entry key="suzuki" value="gixxer"/>
   <entry key="kawasaki" value="ninja"/>
     
-  </entry>
+  
 </util:map>
 
 <util:list id="list">

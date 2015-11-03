@@ -12,7 +12,7 @@ public class Item {
 
      private String name;
      private List<String> shortcuts;
-     private Map<String,Integer> goods;
+     private Map<String,String> goods;
      private boolean flag;
      private Properties props;
      private Set<String> locations;
