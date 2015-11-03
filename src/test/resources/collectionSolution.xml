@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:c="http://www.springframework.org/schema/c"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
+
+<bean id="db" class="pl.java.scalatech.domain.collections.Db"/>
+
+<bean id="item" class="pl.java.scalatech.domain.collections.Item">
+  <property name="name" value="FirstItem"/>
+  <property name="shortcuts" ref="list"/>
+  <property name="goods" ref="goods"/>
+  <property name="locations" ref="locations"/>
+  <property name="flag" value="true"/>
+  <property name="props" ref="props"/>
+  <property name="quantity" ref="quantity"/>
+
+</bean>
+
+<util:property-path id="quantity" path="db.quantity"/>
+
+<util:constant id="flag" static-field="java.lang.Boolean.TRUE"/>
+
+<util:properties id="props">
+  <prop key="slawek">borowiec</prop>
+</util:properties>
+
+<util:properties id="prop2" location="classpath:car.properties"/>
+
+<util:set id="locations">
+  <value>Radom</value>
+  <value>Warszawa</value>
+</util:set>
+
+<util:map id="goods" map-class="java.util.TreeMap">
+  <entry key="yamaha" value="r1"/>
+  <entry key="suzuki" value="gixxer"/>
+  <entry key="kawasaki" value="ninja"/>
+    
+  </entry>
+</util:map>
+
+<util:list id="list">
+  <value>slawek</value>
+  <value>R1</value>
+</util:list>
+
+</beans>
