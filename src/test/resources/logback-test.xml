@@ -1,4 +1,5 @@
 <configuration scan="true" scanperiod="5 seconds">
+  <consolePlugin />
 
  <turboFilter class="ch.qos.logback.classic.turbo.MDCFilter">
   <MDCKey>username</MDCKey>
