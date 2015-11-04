@@ -21,8 +21,9 @@ public class MyReplacer implements MethodReplacer, ApplicationContextAware {
 
     @Override
     public Object reimplement(Object obj, Method method, Object[] args) throws Throwable {
-        log.info("_+++  reimplement : {}",method.getName());
-        log.info("_+++  args : {}",args);
+        log.info("_+++  metoda klasy komp napisywanego przez reimplement : {}",method.getName());
+        log.info("_+++  args w napisanej metodzie : {}",args);
+        log.info("obiekt ktorego metoda jest nadpisywana : {}",obj);
         return context.getBean((String) args[0]);
     }
 
