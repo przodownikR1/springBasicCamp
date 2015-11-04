@@ -1,4 +1,4 @@
-package pl.java.scalatech.scopeBehave;
+package pl.java.scalatech.scopeBehave.config.singleton;
 
 import javax.annotation.PostConstruct;
 
@@ -7,12 +7,15 @@ import org.springframework.stereotype.Service;
 import lombok.Data;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import pl.java.scalatech.scopeBehave.Call;
 
-@Service
+@Service("storeService")
 @RequiredArgsConstructor
 @Data
 @Slf4j
+@ToString
 public class StoreService {
 
 
