@@ -7,7 +7,7 @@ public interface Call {
 
   void printSpecific();
 
-    default void print(Logger log) {
-        log.info("created {}", this.getClass().getSimpleName());
+    default void print(Logger log, Object... obj) {
+        log.info("created {} , hash {}", this.getClass().getSimpleName(),obj.hashCode());
     }
 }
