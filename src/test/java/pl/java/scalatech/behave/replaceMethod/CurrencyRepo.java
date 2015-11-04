@@ -1,4 +1,4 @@
-package pl.java.scalatech.behave.lookup;
+package pl.java.scalatech.behave.replaceMethod;
 
 import javax.annotation.PostConstruct;
 
