@@ -1,4 +1,11 @@
 <configuration scan="true" scanperiod="5 seconds">
+
+ <turboFilter class="ch.qos.logback.classic.turbo.MDCFilter">
+  <MDCKey>username</MDCKey>
+  <Value>przodownik</Value>
+  <OnMatch>ACCEPT</OnMatch>
+ </turboFilter>
+
    <property scope="context" name="pattern_stdout"
 		value="%highlight(%.-5level)|%green(%date{yyyy-MM-dd HH:mm:ss.SSS})|%boldMagenta([%thread])|%yellow(%logger{70}:%boldYellow(%line)) - %msg%n%red(%rEx)" />
 
@@ -17,11 +24,18 @@
 		</encoder>
 	</appender>
 	
+	<appender name="console2" class="ch.qos.logback.core.ConsoleAppender"> 
+  <layout>
+    <Pattern>%X{first} %X{last} - %m%n</Pattern>
+  </layout> 
+</appender>
+	
 	<logger name="org.springframework.aop.interceptor" level="trace" />
     <logger name="pl.java.scalatech" level="trace" />
     <logger name="pl.java.scalatech.trace" level="trace"/>
 
 	<root level="INFO">
 	    <appender-ref ref="console"/>
+	    <appender-ref ref="console2"/>
 	</root>
 </configuration>
