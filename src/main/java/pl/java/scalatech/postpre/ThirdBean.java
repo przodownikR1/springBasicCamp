@@ -3,13 +3,10 @@ package pl.java.scalatech.postpre;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-import org.springframework.stereotype.Component;
-
 import lombok.extern.slf4j.Slf4j;
-//@Component
 @Slf4j
-public class TwoBean {
-    public TwoBean(){
+public class ThirdBean {
+    public ThirdBean(){
         log.info("+++ construct {}",this.getClass().getSimpleName());
     }
     
