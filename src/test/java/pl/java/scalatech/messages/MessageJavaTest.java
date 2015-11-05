@@ -1,5 +1,6 @@
 package pl.java.scalatech.messages;
 
+import java.util.Date;
 import java.util.Locale;
 
 import javax.annotation.Resource;
@@ -33,10 +34,8 @@ public class MessageJavaTest {
     public void shouldMessagesWork(){
         String str = context.getMessage("hello", null, Locale.US);
         Assertions.assertThat(str).isEqualTo("hi");
-        
         str = context.getMessage("hello", null, Locale.getDefault());
         Assertions.assertThat(str).isEqualTo("czesc");
-        
         log.info("welcome : {}",str);
     }
     @Test
@@ -47,15 +46,16 @@ public class MessageJavaTest {
     @Test
     public void shouldMessageParamsSourceWork(){
         log.info("messageSource  hello => {} ",value(new String[]{"slawek","przodownik"}));
+        log.info("messageSource2 hello => {}",value(new Object[]{4, new Date()}));
     }
+    
     @Test
     public void shouldInjectByValueWork(){
         log.info("+++ value : {}",answer.getMsg());
     }
     
-    private String value(String ... strs) {
+    private String value(Object ... strs) {
         Locale locale = LocaleContextHolder.getLocale();    
-        log.info("%%%   {}",strs);
         return messageSource.getMessage("helloParams", strs, locale);
     }
 }
