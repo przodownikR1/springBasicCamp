@@ -20,4 +20,6 @@
 		<property name="cacheSeconds" value="1" />
 	</bean>
 
+     <util:properties id="messages" location="classpath:i18n/messages.properties" />
+
 </beans>
