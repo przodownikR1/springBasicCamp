@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.core.convert.support.DefaultConversionService;
 @Configuration
-@ComponentScan(basePackageClasses={DataConverter.class,PcBean2.class})
+@ComponentScan(basePackageClasses={PcBean2.class})
 public class PlaceholderConverConfig {
     @Bean
     public ConversionService conversionService(){
