@@ -9,9 +9,27 @@
 	<configs>
 		<config>src/test/resources/appConfig.xml</config>
 		<config>src/test/resources/collectionSolution.xml</config>
+		<config>src/test/resources/lookupMethod.xml</config>
+		<config>src/test/resources/placeholder.xml</config>
+		<config>src/test/resources/editors.xml</config>
+		<config>src/test/resources/boat.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
 	<configSets>
+		<configSet>
+			<name><![CDATA[app]]></name>
+			<allowBeanDefinitionOverriding>true</allowBeanDefinitionOverriding>
+			<incomplete>false</incomplete>
+			<configs>
+				<config>src/test/resources/appConfig.xml</config>
+				<config>src/test/resources/collectionSolution.xml</config>
+				<config>src/test/resources/editors.xml</config>
+				<config>src/test/resources/lookupMethod.xml</config>
+				<config>src/test/resources/placeholder.xml</config>
+			</configs>
+			<profiles>
+			</profiles>
+		</configSet>
 	</configSets>
 </beansProjectDescription>
