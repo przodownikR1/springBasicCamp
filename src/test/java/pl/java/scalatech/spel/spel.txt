@@ -1,0 +1,95 @@
+    @Value("#{addressBean}")
+    private AddressAnnotation addressAnnotation; // Example of Bean Reference
+ 
+    @Value("#{addressBean.country}")
+    private String country;
+ 
+    @Value("#{addressBean.getFullAddress('GB Road')}")  // Example of Method Invocation
+    private String fullAddress;
+ 
+
+//Relational operators
+     
+        @Value("#{1 == 1}") //true
+        private boolean testEqual;
+     
+        @Value("#{1 != 1}") //false
+        private boolean testNotEqual;
+     
+        @Value("#{1 < 1}") //false
+        private boolean testLessThan;
+     
+        @Value("#{1 <= 1}") //true
+        private boolean testLessThanOrEqual;
+     
+        @Value("#{1 > 1}") //false
+        private boolean testGreaterThan;
+     
+        @Value("#{1 >= 1}") //true
+        private boolean testGreaterThanOrEqual;
+     
+        //Logical operators , numberBean.no == 999
+     
+        @Value("#{addressBean.postcode == 400607 and addressBean.postcode < 99999}") //false
+        private boolean testAnd;
+     
+        @Value("#{addressBean.postcode == 400607 or addressBean.postcode < 900}") //true
+        private boolean testOr;
+     
+        @Value("#{!(addressBean.postcode == 400607)}") //false
+        private boolean testNot;
+     
+        //Mathematical operators
+     
+        @Value("#{1 + 1}") //2.0
+        private double testAdd;
+     
+        @Value("#{'1' + '@' + '1'}") //1@1
+        private String testAddString;
+     
+        @Value("#{1 - 1}") //0.0
+        private double testSubtraction;
+     
+        @Value("#{1 * 1}") //1.0
+        private double testMultiplication;
+     
+        @Value("#{10 / 2}") //5.0
+        private double testDivision;
+     
+        @Value("#{10 % 10}") //0.0
+        private double testModulus ;
+     
+        @Value("#{2 ^ 2}") //4.0
+        private double testExponentialPower;
+        
+        // Ternary Operator (If-Then-Else)
+        @Value("#{addressBean.postcode < 999999 ? true : false}")
+        private boolean warning;
+     
+    
+        
+        // Lists, Maps Example
+        @Value("#{addressBean.map['MapA']}")
+        private String map;
+     
+        @Value("#{addressBean.list[1]}")
+        private String list;
+        
+            // Regular Expression Example
+        
+        // email regular expression
+        String emailRegEx = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)" +
+                "*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+     
+        // if this is a digit?
+        @Value("#{'100' matches '\\d+' }")
+        private boolean validDigit;
+     
+        // if this is a digit + ternary operator
+        @Value("#{ ('1a00' matches '\\d+') == true ? " +
+                "'yes this is digit' : 'No this is not a digit'  }")
+        private String msg;
+     
+        // if this emailBean.emailAddress contains a valid email address?
+        @Value("#{addressBean.emailAddress matches customerBean.emailRegEx}")
+        private boolean validEmail;
