@@ -31,6 +31,7 @@ public class SimpleCollectionTest {
     @Value("#{ systemProperties['user.name'] }")
     private String user;
 
+
     @Test
     public void shouldItemCreate() {
       // ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("collectionSolution.xml");
@@ -40,6 +41,7 @@ public class SimpleCollectionTest {
        log.info("user : {}",user);
        log.info("+++ {}  -> map :  {} , name = {}",s,bike,name);
        log.info("+++  random : {} ,   r -> {}",x,random);
+
 
     }
 }
