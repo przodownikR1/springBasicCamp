@@ -14,7 +14,7 @@
 <bean id="item" class="pl.java.scalatech.domain.collections.Item">
   <property name="name" value="FirstItem"/>
   <property name="shortcuts" ref="list"/>
-  <property name="goods" ref="goods"/>
+ <property name="goods" ref="goods"/> 
   <property name="locations" ref="locations"/>
   <property name="flag" value="true"/>
   <property name="props" ref="prop2"/>
@@ -50,4 +50,5 @@
   <value>R1</value>
 </util:list>
 
+<bean id="randomNumber" class="java.lang.Math" factory-method="random"/>
 </beans>
