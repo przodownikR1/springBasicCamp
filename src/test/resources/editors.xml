@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd">
         
         <bean class="pl.java.scalatech.editors.EditorConfig"/>
-        <bean id="pcEditor" class="pl.java.scalatech.editors.PcEditorBean" p:name="slawek" p:age="22" p:birthDate="2015-10-01"        />
+        <bean id="pcEditor" class="pl.java.scalatech.editors.PcEditorBean" p:name="slawek" p:age="22"        />
         
         
         </beans>
