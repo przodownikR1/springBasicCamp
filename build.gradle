@@ -8,7 +8,7 @@ buildscript {
         classpath('io.spring.gradle:dependency-management-plugin:0.5.3.RELEASE')
     }
     ext {
-     springVersion = '4.2.1.RELEASE'
+     springVersion = '4.2.3.RELEASE'
     }
 }
 
@@ -27,7 +27,7 @@ dependencyManagement {
 }
 
 ext {
-     springVersion = '4.2.1.RELEASE'
+     springVersion = '4.2.3.RELEASE'
      hibernateVersion = "5.0.2.Final"
      javaxValidationVersion = "1.1.0.Final"
      hibernateValidatorVersion = "5.0.3.Final"

@@ -1,11 +1,11 @@
 package pl.java.scalatech.domain.basic;
 
-public class Car {  //Car class controls the creation of the engine
+public class Car { 
 
     private Engine engine;
     
     public Car(){
-        engine = new Engine(); //tight coupling 
+        engine = new Engine(); 
     }
     
 }
