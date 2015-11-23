@@ -1,5 +1,7 @@
 package pl.java.scalatech.domain.basic;
 
-public class Engine {
-
+public interface Engine {
+   
+    
+    void start();
 }
